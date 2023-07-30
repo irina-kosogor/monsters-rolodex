@@ -1,6 +1,7 @@
+import { DeleteButton } from "./Button/Button";
 import "./Card.css";
 
-export const Card = ({ monster }) => {
+export const Card = ({ monster, deleteMonster }) => {
   const { id, name, email } = monster;
 
   return (
@@ -11,6 +12,11 @@ export const Card = ({ monster }) => {
       />
       <h2>{name}</h2>
       <p>{email}</p>
+      <DeleteButton
+        text={"Delete monster"}
+        className="delete-btn"
+        handleClick={deleteMonster}
+      />
     </div>
   );
 };
