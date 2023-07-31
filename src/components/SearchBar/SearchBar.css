@@ -1,0 +1,14 @@
+.search-bar {
+    border: none;
+    outline: none;
+    padding: 10px;
+    line-height: 30px;
+    margin: 0 auto 30px;
+    display: block;
+  }
+
+.search-bar input {
+    margin: 0 auto;
+    display: block;
+    width: 150px;
+}

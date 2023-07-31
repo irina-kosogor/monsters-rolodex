@@ -15,8 +15,7 @@ body {
 }
 
 .app-title {
-  margin-top: 75px;
-  margin-bottom: 50px;
+  margin: 75px auto 50px auto;
   font-size: 76px;
   font-weight: bold;
   color: #0ccac4;
