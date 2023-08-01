@@ -1,0 +1,17 @@
+.add-form {
+    text-align: center;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.add-form__wrapper {
+    margin-bottom: 20px;
+}
+
+.add-form label {
+    color: #fff;
+    margin: 15px;
+    font-size:14px;
+	font-weight:bold;
+}
+

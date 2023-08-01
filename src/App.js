@@ -2,6 +2,7 @@ import { Component } from "react";
 import SearchBar from "./components/SearchBar/SearchBar";
 import "./App.css";
 import CardList from "./components/CardList/CardList";
+import AddForm from "./components/AddForm/AddForm";
 
 class App extends Component {
   constructor() {
@@ -35,9 +36,21 @@ class App extends Component {
     }));
   };
 
+  generateNextId = (monsters) => {
+    return monsters.map((item) => item.id).sort((a, b) => b - a)[0] + 1;
+  };
+
+  addMonster = (newMonster) => {
+    this.setState((prevState) => ({
+      monsters: [
+        ...prevState.monsters,
+        { ...newMonster, id: this.generateNextId(prevState.monsters) },
+      ],
+    }));
+  };
+
   render() {
     const { monsters, searchField } = this.state;
-
     const filteredMonsters = monsters.filter((monster) =>
       monster.name.toLowerCase().includes(searchField.toLowerCase())
     );
@@ -49,6 +62,7 @@ class App extends Component {
           placeholder="search monsters"
           handleChange={this.handleSearchChange}
         />
+        <AddForm onAddMonster={this.addMonster} />
         <CardList
           monsters={filteredMonsters}
           handleDeleteMonster={this.handleDeleteMonster}
